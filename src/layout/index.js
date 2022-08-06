@@ -7,8 +7,6 @@ import { Container } from "./styles";
 export const Layout = ({ children }) => {
   const containerTheme = useColorModeValue("light", "");
 
-  // Testar se precisa de estilização linha 15 e 16.
-
   return (
     <Container mode={containerTheme}>
       <Header />

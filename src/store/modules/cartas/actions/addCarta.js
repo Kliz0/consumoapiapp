@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const GetCartasSlice = createSlice({
-  name: "get_cartas",
+const AddCartaSlice = createSlice({
+  name: "add_carta",
   initialState: {
     hasFinished: false,
     isRequesting: false,
@@ -9,17 +9,18 @@ const GetCartasSlice = createSlice({
     errors: [],
   },
   reducers: {
-    getCartasRequest: (state) => {
+    addCartaRequest: (state) => {
       state.hasFinished = false;
       state.isRequesting = true;
     },
-    getCartasSuccess: (state, action) => {
+    addCartaSuccess: (state, action) => {
       state.hasFinished = true;
       state.isRequesting = false;
       state.successPayload = action.payload;
       state.errors = [];
     },
-    getCartasFail: (state, action) => {
+
+    addCartaFail: (state, action) => {
       state.hasFinished = true;
       state.isRequesting = false;
       state.successPayload = [];
@@ -28,7 +29,7 @@ const GetCartasSlice = createSlice({
   },
 });
 
-export const { getCartasRequest, getCartasSuccess, getCartasFail } =
-  GetCartasSlice.actions;
+export const { addCartaRequest, addCartaSuccess, addCartaFail } =
+  AddCartaSlice.actions;
 
-export default GetCartasSlice.reducer;
+export default AddCartaSlice.reducer;
